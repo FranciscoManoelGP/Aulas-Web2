@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "name": "Lucas",
+        "phone": "40028922",
+        "adress": "Bonfim"
+    },
+    {
+        "id": "2",
+        "name": "Bruno",
+        "phone": "",
+        "adress": "Campo Formoso"
+    },
+    {
+        "id": "3",
+        "name": "Marcos",
+        "phone": "99999999",
+        "adress": "Bonfim"
+    },
+    {
+        "id": "4",
+        "name": "",
+        "phone": "40028922",
+        "adress": "Campo Formoso"
+    }
+]
