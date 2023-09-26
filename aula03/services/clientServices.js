@@ -3,34 +3,29 @@ const fs = require("fs");
 let clientList = [];
 
 function clientListLoad() {
-    try {
-        clientList = JSON.parse(fs.readFileSync("../clientList.json"));
-    } catch (error) {
-        clientList = [];
-    }
-}
-
-function clientListIsEmpty() {
-    if (clientList.length === 0) {
-        clientListLoad();
-    }
-
-    return clientList;
+    return clientList = JSON.parse(fs.readFileSync("../clientList.json"));
 }
 
 function getAllClients() {
-    const result = clientListIsEmpty();
+    const result = clientListLoad();
 
     return result;
 }
 
 function getClientById(id) {
-    const result = clientListIsEmpty().find(client => client.id === id);
-    
+    const result = clientListLoad().find(client => client.id === id);
+
+    return result;
+}
+
+function deleteClientById(id) {
+    const result = clientListLoad().filter(client => client.id !== id);
+
     return result;
 }
 
 module.exports = {
     getAllClients,
-    getClientById
+    getClientById,
+    deleteClientById
 }
