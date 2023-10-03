@@ -1,4 +1,4 @@
-const { getAllClients, getClientById } = require("../services/clientServices");
+const { getAllClients, getClientById, deleteClientById } = require("../services/clientServices");
 
 function getClients(req, res) {
     try {
@@ -19,7 +19,18 @@ function getClient(req, res) {
     }
 }
 
+function deleteClient(req, res) {
+    try {
+        const id = req.params.id;
+        deleteClientById(id)
+        res.status(200).send("Salve")
+    } catch (error) {
+        res.status(500).send()
+    }
+}
+
 module.exports = {
     getClients,
-    getClient
+    getClient,
+    deleteClient
 }

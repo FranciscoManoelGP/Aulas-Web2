@@ -5,3 +5,6 @@ GET http://localhost:3000/clients/
 
 ###
 GET http://localhost:3000/1/
+
+###
+DELETE http://localhost:3000/delete/1/

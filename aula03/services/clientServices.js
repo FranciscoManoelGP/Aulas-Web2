@@ -6,6 +6,10 @@ function clientListLoad() {
     return clientList = JSON.parse(fs.readFileSync("../clientList.json"));
 }
 
+function clientListEdit(editedModel) {
+    fs.writeFileSync("../clientList.json", JSON.stringify(editedModel));
+}
+
 function getAllClients() {
     const result = clientListLoad();
 
@@ -20,8 +24,8 @@ function getClientById(id) {
 
 function deleteClientById(id) {
     const result = clientListLoad().filter(client => client.id !== id);
-
-    return result;
+    
+    clientListEdit(result);
 }
 
 module.exports = {
